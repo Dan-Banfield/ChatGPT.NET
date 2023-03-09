@@ -4,14 +4,14 @@
 
 <div align="center">
 
-[![NuGet Package](https://img.shields.io/nuget/v/)](https://www.nuget.org/)
+[![NuGet Package](https://img.shields.io/nuget/v/)](https://www.nuget.org/packages/ChatGPT.NET.API.DanBanfield.1.0.0)
 
 </div>  
 
 ## Installation
-Stable builds are available through [NuGet](https://www.nuget.org/).  
+Stable builds are available through [NuGet](https://www.nuget.org/packages/ChatGPT.NET.API.DanBanfield.1.0.0).  
 ```
-Install-Package 
+Install-Package ChatGPT.NET.API.DanBanfield.1.0.0
 ```
 
 ## Usage
