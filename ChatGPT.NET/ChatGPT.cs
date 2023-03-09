@@ -7,7 +7,7 @@ using System.Collections.Generic;
 
 namespace ChatGPT.NET
 {
-    public class ChatGPT
+    public class ChatGPTAPI
     {
         #region Private Instance Variables
 
@@ -18,12 +18,12 @@ namespace ChatGPT.NET
         private const string API_ENDPOINT 
             = "https://api.openai.com/v1/chat/completions";
 
-        public ChatGPT(string apiKey)
+        public ChatGPTAPI(string apiKey)
         {
             this.apiKey = apiKey;
         }
 
-        public async Task<ChatGPTResponse> GenerateResponseAsync(string prompt)
+        public async Task<ChatGPTAPIResponse> GenerateResponseAsync(string prompt)
         {
             using (HttpClient httpClient = new HttpClient())
             {
@@ -48,7 +48,7 @@ namespace ChatGPT.NET
                         = await httpClient.SendAsync(httpRequestMessage))
                     {
                         if (!httpResponseMessage.IsSuccessStatusCode)
-                            return new ChatGPTResponse("", false);
+                            return new ChatGPTAPIResponse("", false);
 
                         Stream streamResponse 
                             = await httpResponseMessage
@@ -57,7 +57,8 @@ namespace ChatGPT.NET
                         Root root = await JsonSerializer
                             .DeserializeAsync<Root>(streamResponse);
 
-                        ChatGPTResponse result = new ChatGPTResponse(root.choices[0]
+                        ChatGPTAPIResponse result 
+                            = new ChatGPTAPIResponse(root.choices[0]
                             .message.content.Trim(), true);
 
                         return result;
@@ -67,12 +68,12 @@ namespace ChatGPT.NET
         }
     }
 
-    public class ChatGPTResponse
+    public class ChatGPTAPIResponse
     {
         public string responseText { get; set; }
         private bool successfulRequest { get; set; }
 
-        public ChatGPTResponse(string responseText, bool successfulRequest)
+        public ChatGPTAPIResponse(string responseText, bool successfulRequest)
         {
             this.responseText = responseText;
             this.successfulRequest = successfulRequest;
