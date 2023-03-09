@@ -11,7 +11,7 @@
 ## Installation
 Stable builds are available through [NuGet](https://www.nuget.org/packages/ChatGPT.NET.API.DanBanfield/1.0.0).  
 ```
-Install-Package ChatGPT.NET.API.DanBanfield 1.0.0
+Install-Package ChatGPT.NET.API.DanBanfield
 ```
 
 ## Usage
