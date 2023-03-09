@@ -4,6 +4,24 @@
     <TargetFramework>net7.0</TargetFramework>
     <ImplicitUsings>disable</ImplicitUsings>
     <Nullable>disable</Nullable>
+    <Title>ChatGPT.NET</Title>
+    <Authors>Dan Banfield</Authors>
+    <Description>A .NET implementation of the ChatGPT API.</Description>
+    <Copyright>Dan Banfield</Copyright>
+    <PackageProjectUrl>https://github.com/Dan-Banfield/ChatGPT.NET</PackageProjectUrl>
+    <RepositoryUrl>https://github.com/Dan-Banfield/ChatGPT.NET</RepositoryUrl>
+    <PackageTags>ChatGPT;AI;API</PackageTags>
+    <PackageIcon>ChatGPT_logo.svg.png</PackageIcon>
+    <PackageId>ChatGPT.NET.API.DanBanfield</PackageId>
+    <PackageLicenseExpression>MIT</PackageLicenseExpression>
+    <PackageRequireLicenseAcceptance>True</PackageRequireLicenseAcceptance>
   </PropertyGroup>
+
+  <ItemGroup>
+    <None Include="..\..\..\Images\ChatGPT_logo.svg.png">
+      <Pack>True</Pack>
+      <PackagePath>\</PackagePath>
+    </None>
+  </ItemGroup>
 
 </Project>
